@@ -1,0 +1,88 @@
+/* default create-react-app styles */
+.App {
+  display: flex;
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* css setup to get the viewport right... canvas is a misnomer here */
+html, body, #app, #app>div {
+  height: 100%;
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+  background-color: #00bff3;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: absolute;
+}  
+
+.person {
+  height: 200px;
+  width: 200px;
+  /*background-color: black;*/
+  justify-content: 'center';
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.vegas-sign-glow-slides {
+  width: 850px;
+  height: 790px;
+  background: url('/assets/Vegas-Sign-Glow-Slides.png') left center;
+  animation: play-vegas-sign-glow 2.5s steps(3) infinite;
+}
+
+@keyframes play-vegas-sign-glow {
+   100% { background-position: -2550px; }
+}
+
+.notification {
+  color: white;
+  width: 75vw;
+  height: 5vh;
+  text-align: center;
+  animation: blinker 4s ease infinite;
+  font-size: 1.4em;
+  position: fixed;
+  left: 50%;
+  bottom: 5vh;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
