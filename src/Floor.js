@@ -8,7 +8,6 @@ class Floor extends Component {
           startingPositionX: this.props.x,
           startingPositionY: this.props.y,
       };
-      this.currentPosition = this.props.x;
     }
 
   render() {
