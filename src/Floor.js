@@ -13,7 +13,7 @@ class Floor extends Component {
   render() {
     const startingpositionx = this.state.startingPositionX - (this.props.move * this.props.ratio); 
     const startingpositiony = this.state.startingPositionY;
-    const height = this.props.maxheight;
+    const height = this.props.height;
     const width = this.props.width;
 
     return (
@@ -26,7 +26,7 @@ class Floor extends Component {
                 position: "absolute",
                 backgroundColor: "green",
             }} 
-            onWheel={this.props.scroll}>
+            >
         </div>
     );
   }

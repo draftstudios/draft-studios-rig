@@ -33,8 +33,13 @@ class App extends Component {
 
     return (
         <Canvas scroll={this.handleWheel}>
+            {/* background!!! */}
             <Parallax move={pos} x="200" floor={this.state.floor} ratio="1.2" opacity="1" color="transparent" asset="Zaykim.png"/>
+
+            {/* poopy building!!! */}
             <Parallax move={pos} x="1000" floor={this.state.floor} ratio="1" opacity="1" color="brown"/>
+
+            {/* clouds!!! */}
             <Parallax move={pos} x="50" y="25" ratio="0.5" opacity="0.9" color="white"/>
             <Parallax move={pos} x="440" y="200" ratio="2" opacity="0.7" color="yellow"/>
             <Parallax move={pos} x="770" y="100" ratio="1.25" opacity="1" color="pink"/>
@@ -43,12 +48,13 @@ class App extends Component {
             <Parallax move={pos} x="2750" y="10" ratio="0.25" opacity="0.6" color="white"/>
             <Parallax move={pos} x="3750" y="80" ratio="1.25" opacity="1" color="white"/>
 
-            <Floor move={pos} x="0" maxheight={this.state.floor} ratio="1" width="20000"/>
+            {/* green floor!!! */}
+            <Floor move={pos} x="0" height={this.state.floor} ratio="1" width="20000"/>
 
             <Person key="1" pos={pos} floor={this.state.floor} deltay={scrollChange} />
 
-            <Parallax move={pos} x="1100" floor={this.state.floor} ratio="1" opacity="1" color="brown"/>
-            <Parallax move={pos} x="0" floor={this.state.floor} ratio="0.9" opacity="0.5" asset="Vegas-Background-Buildings.png" color="purple"/>
+            {/* orange building that is in front of person!!! */}
+            <Parallax move={pos} x="1100" floor={this.state.floor} ratio="1" opacity="1" color="orange"/>
         </Canvas>
     );
   }
