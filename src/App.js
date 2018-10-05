@@ -19,12 +19,16 @@ class App extends Component {
   }
 
   handleWheel = (e) => {
+      console.log(e.deltaY);
       const currentposition = this.state.currentPosition;
 
       this.setState({
           deltaY: e.deltaY,
           currentPosition: currentposition+e.deltaY > 0 ? currentposition + e.deltaY : 0, 
       });
+
+      e.preventDefault ? e.preventDefault() : null;
+      e.stopPropagation ? e.stopPropagation() : null;
   }
 
   render() {
@@ -37,7 +41,7 @@ class App extends Component {
             <Parallax move={pos} x="200" floor={this.state.floor} ratio="1.2" opacity="1" color="transparent" asset="Zaykim.png"/>
 
             {/* poopy building!!! */}
-            <Parallax move={pos} x="1000" floor={this.state.floor} ratio="1" opacity="1" color="brown"/>
+            <Parallax move={pos} x="800" floor={this.state.floor} ratio="1" opacity="1" color="brown"/>
 
             {/* clouds!!! */}
             <Parallax move={pos} x="50" y="25" ratio="0.5" opacity="0.9" color="white"/>
@@ -54,7 +58,7 @@ class App extends Component {
             <Person key="1" pos={pos} floor={this.state.floor} deltay={scrollChange} />
 
             {/* orange building that is in front of person!!! */}
-            <Parallax move={pos} x="1100" floor={this.state.floor} ratio="1" opacity="1" color="orange"/>
+            <Parallax move={pos} x="600" floor={this.state.floor} ratio="1" opacity="1" color="orange"/>
         </Canvas>
     );
   }
